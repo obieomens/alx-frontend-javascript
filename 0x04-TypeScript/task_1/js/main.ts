@@ -15,6 +15,11 @@ interface printTeacherFunction {
     (firstName: string, lastName: string): string;
 }
 
+interface StudentConstructor {
+    new (firstName: string, lastName: string): StudentInterface;
+}
+
+
 
 const teacher3: Teacher = {
     firstName: 'John',
