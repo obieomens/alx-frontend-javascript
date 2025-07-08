@@ -19,6 +19,22 @@ interface StudentConstructor {
     new (firstName: string, lastName: string): StudentInterface;
 }
 
+interface StudentInterface {
+    workOnHomework(): string;
+    displayName(): string;
+}
+
+class StudentClass implements StudentInterface {
+    constructor(private firstName: string, private lastName: string){}
+
+    workOnHomework(): string {
+        return 'currently working';
+    }
+    displayName(): string {
+        return this.firstName;
+    }
+}
+
 
 
 const teacher3: Teacher = {
@@ -47,4 +63,6 @@ const printTeacher: printTeacherFunction = (firstName, lastName) =>{
 };
 console.log(printTeacher('John', 'Doe'));
     
-
+const student = new StudentClass('Jane', 'Obi');
+console.log(student.displayName());
+console.log(student.workOnHomework());
